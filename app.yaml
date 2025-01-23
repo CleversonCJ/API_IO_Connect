@@ -1,0 +1,6 @@
+runtime: python310
+entrypoint: uvicorn dynamic_insights_api:app --host 0.0.0.0 --port $PORT
+
+handlers:
+  - url: /.*
+    script: auto
