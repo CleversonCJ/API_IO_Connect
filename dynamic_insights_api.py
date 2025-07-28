@@ -13,7 +13,7 @@ import json
 META_ACCESS_TOKEN = None
 META_CLIENT_ID = "1194421661663278"
 META_CLIENT_SECRET = "b98e4d3766771d36b3bf6eed6d44d2da"
-META_REFRESH_TOKEN = "EAAQZBUfbbAC4BOz5sZCpZAZA8U9LZBbvE9pYD9QVwc12HRMlQ2zt0LLsQPY6G5ttaVeDEdGVs4n8ljrNUgK8FLHzmcIUp8JYg5tVprRG9IUKzZCE4G2IUw535iFMV60WwsaovXJ4OqpEzAXxdle4T9pGa7B4KZCtqzslMZCSQzbNBfOIaQ98ZAVQIhkGpHmq6YFUgNd4iA9yp5Guf1pBUuqFPuwxIDXEwsQsUZA6KE4uR6YL2C90KhRMci"
+META_REFRESH_TOKEN = "EAAQZBUfbbAC4BOw8Nl91OoQBSrjJ46ruyZCJLx6gg9smGK7jE3iZBYapP07Co8Er0zZAf7fguCBzW0ZCSzy1AZAV3vVMFdpZAsTVCN3EnNX88L6aEL1CBFi9bX64wOXAXrbAtc1ho6wCDAqJYOz68C5uEFViigEAo8ISuwPYBovpTzLXerc7sCQO1gYBiVspnFJel4ZCCKcfRLlnTRD5QgZDZD"
 META_BASE_URL = "https://graph.facebook.com/v21.0"
 
 cache = redis.StrictRedis(host="localhost", port=6379, db=0)
@@ -130,6 +130,7 @@ async def fetch_dynamic_insights(insights_request: InsightsRequest):
             "time_range": json.dumps({"since": start_date, "until": end_date}),
             "level": level,
         }
+        insights = api_request(insights_url, params).get("data", [])
         insights = api_request(insights_url, params).get("data", [])
 
         print(f"[DEBUG] Insights retornados: {insights}")
