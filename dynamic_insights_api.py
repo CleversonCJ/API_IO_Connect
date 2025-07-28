@@ -11,9 +11,9 @@ import json
 
 # Configuração da API da Meta
 META_ACCESS_TOKEN = None
-META_CLIENT_ID = "1194421661663278"
-META_CLIENT_SECRET = "b98e4d3766771d36b3bf6eed6d44d2da"
-META_REFRESH_TOKEN = "EAAQZBUfbbAC4BOw8Nl91OoQBSrjJ46ruyZCJLx6gg9smGK7jE3iZBYapP07Co8Er0zZAf7fguCBzW0ZCSzy1AZAV3vVMFdpZAsTVCN3EnNX88L6aEL1CBFi9bX64wOXAXrbAtc1ho6wCDAqJYOz68C5uEFViigEAo8ISuwPYBovpTzLXerc7sCQO1gYBiVspnFJel4ZCCKcfRLlnTRD5QgZDZD"
+META_CLIENT_ID = "client_id"
+META_CLIENT_SECRET = "client_secret"
+META_REFRESH_TOKEN = "refresh_token"
 META_BASE_URL = "https://graph.facebook.com/v21.0"
 
 cache = redis.StrictRedis(host="localhost", port=6379, db=0)
